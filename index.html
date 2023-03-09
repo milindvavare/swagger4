@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clubgrok</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+	  rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+	  rel="stylesheet"/>
+	<link  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+	  rel="stylesheet"/>
+	  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<style type="text/css">
+	.custom-file{
+  position:relative;
+  font-family:arial;
+  overflow:hidden;
+  margin-bottom:10px;
+  width: auto;
+  display: inline-block;
+  padding: 10px;
+}
+.custom-file-input{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  cursor:pointer;
+  opacity:0;
+  z-index:100;
+}
+.custom-file img{
+  display:inline-block;
+  vertical-align:middle;
+  margin-right:5px;
+}
+ul.file-list{
+  font-family:arial;
+  list-style: none;
+  padding:0;
+}
+ul.file-list li{
+  border-bottom:1px solid #ddd;
+  padding:5px;
+}
+.remove-list{
+  cursor:pointer;
+  margin-left:10px;
+}
+  /* width */
+		::-webkit-scrollbar {
+		  width: 5px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+		  background: #f1f1f1; 
+		}		 
+		
+		::-webkit-scrollbar-thumb {
+		  background: #888; 
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+		  background: #555; 
+		}
+.synthesize-box{
+	width: 100%;
+	height: 350px;
+	border:1px solid #BFC9CA;
+	border-radius: 10px;
+}
+
+</style>
+<body>
+
+
+	<br><br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card" style="padding: 20px 20px;">
+					<div>
+					<label class="label-text">Context / Keyword / Topic</label>	
+					<input style="height: 40px;" type="text" class="form-control" name="" placeholder="">
+				    </div>
+				    <br>
+				    <div class="row">
+				    	<div class="col-md-6">
+				    		<div>
+								<label class="label-text">Context / Keyword / Topic</label>	
+								<div style="width: 100%;height: 40px;border:1px solid  #F63309;border-radius: 5px;line-height: 40px;padding: 0px 20px;color: black;">
+									<label for="file">Choose Files</label>
+									<input style="display: none;" type="file"class="custom-file-input" id="file" multiple onchange="javascript:updateList()" data-max_length="5">
+
+
+
+								</div>
+							</div>
+				    	</div>
+				    	<div class="col-md-6">
+				    		<div class="row">
+				    			<div class="col-md-9">
+				    				<label class="label-text">Context / Keyword / Topic</label>	
+								    <input style="height: 40px;" type="text" class="form-control" name="" placeholder="Podcast / Articles / Youtube url">
+				    			</div>
+				    			<div class="col-md-3">
+				    				<button style="margin-top: 32px;" class="btn btn-info">Upload Link</button>
+				    			</div>
+								
+							 </div>
+				    	</div>
+				    </div>
+
+
+
+
+				    <div class="row">
+				    	<div class="col-md-12">
+				    		
+				    		<ul id="fileList" class="file-list"></ul>		
+				    	</div>
+				    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+
+		<br>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card" style="padding: 20px 20px;">
+					<div class="row">						
+						<div class="col-md-12" style="padding: 0px 20px;">
+							<label class="label-text">Synthesize</label>
+						</div>
+					</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
+							<div style="padding: 10px 10px;" class="col-md-12">
+							<center><span>Stats & Quotes</span></center>
+						    </div>
+						    
+							<div class="synthesize-box">
+								
+							</div>
+							<div style="padding: 10px 10px;" class="col-md-12">
+							<center><button style="width: 40%;" type="button" class="btn btn-secondary">Get</button>
+								<br>
+								<span>Description</span>
+							</center>
+						    </div>	
+						</div>
+						<div class="col-md-4">
+							<div style="padding: 10px 10px;" class="col-md-12">
+							<center><span>POVs</span></center>
+						    </div>
+							<div class="synthesize-box">
+								
+							</div>
+							<div style="padding: 10px 10px;" class="col-md-12">
+							<center><button style="width: 40%;" type="button" class="btn btn-secondary">Get</button>
+								<br>
+								<span>Description</span>
+							</center>
+						    </div>	
+						</div>
+						<div class="col-md-4">
+							<div style="padding: 10px 10px;" class="col-md-12">
+							<center><span>Questions</span></center>
+						    </div>
+							<div class="synthesize-box">
+								
+							</div>
+							<div style="padding: 10px 10px;" class="col-md-12">
+							<center><button style="width: 40%;" type="button" class="btn btn-secondary">Get</button>
+								<br>
+								<span>Description</span>
+							</center>
+						    </div>	
+						</div>
+					</div>
+				   </div>
+				</div>	
+			</div>
+		</div>
+		<br>
+	</div>
+
+
+
+
+
+
+
+	<nav style="position: fixed;width: 100%;top: 0;" class="navbar navbar-light bg-light">
+	  <div class="container-fluid">
+	    <a class="navbar-brand">Grok</a>
+	    <form class="d-flex input-group w-auto">
+	      
+	      <span class="input-group-text border-0" id="search-addon">	       
+	        <h1 class="count-task">2</h1> Daily Task Remaining
+	      </span>
+	    </form>
+	  </div>
+	</nav>
+
+
+
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/upload_files.js"></script>
+</html>
